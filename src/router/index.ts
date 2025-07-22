@@ -1,17 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomeView,
-  },
-]
+import { constantRoutes } from '@/router/constantRoutes'
+import { asyncRoutes } from '@/router/asyncRoutes.ts'
+import { setupRouterGuards } from '@/router/guards.ts'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: [...constantRoutes, ...asyncRoutes],
 })
+
+setupRouterGuards(router)
 
 export default router
