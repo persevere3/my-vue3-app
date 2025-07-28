@@ -2,15 +2,20 @@ import type { RouteRecordRaw } from 'vue-router'
 
 export const constantRoutes: RouteRecordRaw[] = [
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/login/LoginPage.vue'),
-    meta: { title: '登入', public: true },
+        path:"/",
+        name:"Home",
+        component:()=>import("@/layouts/Default")
   },
   {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
-    component: () => import('@/views/error/404.vue'),
-    meta: { title: '找不到頁面', public: true },
+      path: '/login',
+      name: 'Login',
+      component: () => import("@/views/Login"),
+      meta: { title: '登入', public: true },
+  },
+  {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import("@/views/NotFound"),
+      meta: { title: '找不到頁面', public: true },
   },
 ]

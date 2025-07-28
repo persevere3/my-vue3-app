@@ -116,26 +116,26 @@ export const setupInterceptors = (
       if (opts.enableErrorToast) {
         switch (status) {
           case 400:
-            if (opts.enableErrorToast) ElMessage.error(`請求參數錯誤`)
+            ElMessage.error(`請求參數錯誤`)
             break
           case 401:
-            if (opts.enableErrorToast) ElMessage.error(`未授權，請登入`)
+            ElMessage.error(`未授權，請登入`)
             // redirectToLogin()
             break
           case 403:
-            if (opts.enableErrorToast) ElMessage.error(`禁止訪問`)
+            ElMessage.error(`禁止訪問`)
             break
           case 404:
-            if (opts.enableErrorToast) ElMessage.error(`資源不存在`)
+            ElMessage.error(`資源不存在`)
             break
           case 500:
-            if (opts.enableErrorToast) ElMessage.error(`伺服器錯誤`)
+            ElMessage.error(`伺服器錯誤`)
             break
           case 503:
-            if (opts.enableErrorToast) ElMessage.error(`服務不可用`)
+            ElMessage.error(`服務不可用`)
             break
           default:
-            if (opts.enableErrorToast) ElMessage.error(`未知錯誤`)
+            ElMessage.error(`未知錯誤`)
             break
         }
       }

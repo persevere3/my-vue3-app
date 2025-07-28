@@ -1,11 +1,11 @@
 import axios, { type AxiosInstance, type CreateAxiosDefaults } from 'axios'
-import { setupInterceptors, type InterceptorOptions } from './interceptors.ts'
+import { setupInterceptors, type IInterceptorOptions } from './interceptors.ts'
 
 // 工廠函數參數型別
 interface ICreateRequestOptions {
   config?: CreateAxiosDefaults
   useInterceptors?: boolean
-  interceptorOptions?: InterceptorOptions
+  interceptorOptions?: IInterceptorOptions
 }
 
 // 不同環境的基礎配置
@@ -25,7 +25,7 @@ export const createRequest = ({
     config,
     useInterceptors = true,
     interceptorOptions,
-  }: ICreateRequestOptions = {}): AxiosInstance => {
+}: ICreateRequestOptions = {}): AxiosInstance => {
   
   // 基礎配置
   const env = import.meta.env.MODE || 'development'
